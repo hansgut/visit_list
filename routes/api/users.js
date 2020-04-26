@@ -13,9 +13,7 @@ const User = require("../../models/User");
  */
 router.post('/register', (req, res) => {
     let { name, surname, email, password, confirm_password } = req.body;
-    console.log(req.body);
-    console.log(password);
-    console.log(confirm_password);
+
     if (password !== confirm_password){
         return res.status(400).json({
            msg: "Password do not match."
@@ -78,6 +76,7 @@ router.post('/login', (req, res) => {
              }, (err, token) => {
                 res.status(200).json({
                     success: true,
+                    user: user,
                     token: `Bearer ${token}`,
                     msg: "You are logged in."
                 });
