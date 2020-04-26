@@ -29,10 +29,6 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         console.log(`Can't connect to DB ${err}`);
     });
 
-app.get('/', (req, res) => {
-   return res.send("<h1>Hello</h1>")
-});
-
 const users = require('./routes/api/users');
 app.use('/api/users', users);
 
