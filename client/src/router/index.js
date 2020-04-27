@@ -9,13 +9,19 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/users',
+    name: 'Users',
 
-    component: () => import('../views/About.vue')
+    component: () => import('../views/Users.vue'),
+    meta: {
+      requiresAdmin: true
+    }
   },
   {
     path: '/login',
@@ -55,20 +61,22 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!store.getters.isLoggedIn) {
-      // Redirect to the Login Page
       next('/login');
     } else {
       next();
     }
   } else if (to.matched.some(record => record.meta.requiresGuest)) {
     if (store.getters.isLoggedIn) {
-      // Redirect to the Login Page
       next('/profile');
     } else {
       next();
     }
-  } else {
-    next()
+  } else if(to.matched.some(record => record.meta.requiresAdmin)) {
+    if (store.getters.isAdmin){
+      next()
+    } else {
+      next('/')
+    }
   }
 });
 
