@@ -12,7 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d389004f-1aca-4e27-a367-7d63dbcc233a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Warehouse/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Warehouse/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Users.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -66,7 +69,7 @@
       <workItem from="1587689329893" duration="4000" />
       <workItem from="1587788239740" duration="7937000" />
       <workItem from="1587831198855" duration="11804000" />
-      <workItem from="1587873339276" duration="1637000" />
+      <workItem from="1587873339276" duration="5240000" />
     </task>
     <servers />
   </component>
