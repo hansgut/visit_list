@@ -20,7 +20,10 @@
 
 <script>
   import axios from 'axios';
+  import { urlMixin } from "../mixins/urlMixin";
+
   export default {
+    mixins: [urlMixin],
     data() {
       return {
         users: []
@@ -31,12 +34,12 @@
     },
     methods: {
       getUsers() {
-        axios.get('http://localhost:5000/api/users').then(res => {
+        axios.get(this.apiUrl() + '/api/users').then(res => {
           this.users = res.data.users;
         });
       },
       deleteUser(id) {
-        axios.delete('http://localhost:5000/api/users/' + id).then(res => {
+        axios.delete(this.apiUrl() + '/api/users/' + id).then(res => {
           console.log("User was deleted.", res);
           this.getUsers();
         });
