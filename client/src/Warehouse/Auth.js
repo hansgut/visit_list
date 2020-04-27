@@ -1,18 +1,32 @@
 import axios from 'axios';
 import router from "../router";
-// import router from '../router/index';
+
+const url = ()=> {
+    let url = '';
+    if(process.env.NODE_ENV === 'development'){
+        url = 'http://localhost:5000';
+    }
+    return url;
+}
 
 const state = {
     token: localStorage.getItem('token') || '',
     user: {},
+    admin: false,
     status: '',
     error: null
 };
 
 const getters = {
     isLoggedIn: state => !!state.token,
-    isAdmin: state => state.user.admin,
     authState: state => state.status,
+    isAdmin: function (state) {
+        if(state.user !== undefined){
+            return state.user.admin;
+        } else {
+            return false;
+        }
+    },
     user: state => state.user,
     error: state => state.error
 };
@@ -21,7 +35,7 @@ const actions = {
     async login({ commit }, user){
         commit('auth_request');
         try {
-            let res = await axios.post('/api/users/login', user);
+            let res = await axios.post(url() + '/api/users/login', user);
             if(res.data.success){
                 const token = res.data.token;
                 const user = res.data.user;
@@ -38,7 +52,7 @@ const actions = {
     async register({ commit }, userData) {
         commit('register_request');
         try {
-            let res = await axios.post('/api/users/register', userData);
+            let res = await axios.post(url() + '/api/users/register', userData);
             if(res.data.success !== undefined){
                 commit('register_success');
             }
@@ -49,10 +63,11 @@ const actions = {
     },
     async getProfile({ commit }){
         commit('profile_request');
-        let res = await axios.get('/api/users/profile');
+        let res = await axios.get(url() + '/api/users/profile');
         commit('user_profile', res.data.user);
         return res;
     },
+
     async logout({ commit }){
         await localStorage.removeItem('token');
         commit('logout');
@@ -72,6 +87,7 @@ const mutations = {
         state.user = user;
         state.status = 'success';
         state.error = null;
+        state.admin = false;
     },
     auth_error(state, err){
         state.error = err.response.data.msg;
@@ -89,6 +105,7 @@ const mutations = {
         state.status = '';
         state.token = '';
         state.user = '';
+        state.admin = false;
     },
     register_error(state, err){
         state.error = err.response.data.msg;

@@ -104,7 +104,23 @@ router.get('/profile', passport.authenticate('jwt', {
     });
 });
 
+router.get('/', (req, res) => {
+    User.find({ admin: { $not: { $eq: true } } }) // cannot show admins if need to change please tell
+        .then(users => {
+            return res.json({
+                users: users
+            });
+        });
+});
 
+router.delete('/:id', (req, res) => {
+   User.deleteOne({_id: req.params.id})
+       .then(user => {
+          return res.json({
+             user: user
+          });
+       });
+});
 
 module.exports = router;
 

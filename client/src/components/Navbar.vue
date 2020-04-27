@@ -14,8 +14,18 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/about" class="nav-link">
-                        About
+                    <router-link to="/users" class="nav-link" v-if="isAdmin">
+                        Users
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/subjects" class="nav-link" v-if="isAdmin">
+                        Subjects
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/positions" class="nav-link" v-if="isAdmin">
+                        Positions
                     </router-link>
                 </li>
                 <li class="nav-item" v-if="!isLoggedIn">
@@ -47,7 +57,7 @@
     import { mapGetters, mapActions } from 'vuex';
     export default {
         computed: {
-            ...mapGetters(["isLoggedIn"])
+            ...mapGetters(["isLoggedIn", "isAdmin"])
         },
         methods: {
             ...mapActions(["logout"]),

@@ -3,7 +3,7 @@ const router = express.Router();
 const Subject = require('../../models/subject');
 const LessonType = require('../../models/lesson-type');
 const Position = require('../../models/position');
-let Teacher = require('../../models/teacher');
+let User = require('../../models/User');
 const Visit = require('../../models/visit');
 
 // Subjects
@@ -11,8 +11,10 @@ const Visit = require('../../models/visit');
 router.get("/subjects", (req, res)=>{
     Subject.find({})
         .then(subjects => {
-            res.send(subjects);
-        })
+            return res.json({
+                subjects: subjects
+            });
+        });
 });
 
 router.get("/subjects/:id", (req, res)=>{
@@ -91,8 +93,10 @@ router.delete("/lesson_types/:id", (req, res)=>{
 router.get("/positions", (req, res)=>{
     Position.find({})
         .then(positions => {
-            res.send(positions);
-        })
+            return res.json({
+                positions: positions
+            });
+        });
 });
 
 router.get("/positions/:id", (req, res)=>{
@@ -123,46 +127,6 @@ router.delete("/positions/:id", (req, res)=>{
     Position.deleteOne({_id: req.params.id})
         .then(position => {
             res.send(position);
-        });
-});
-
-// Teachers
-
-router.get("/teachers", (req, res)=>{
-    Teacher.find({}).populate("position")
-        .then(teachers => {
-            res.send(teachers);
-        })
-});
-
-router.get("/teachers/:id", (req, res)=>{
-    Teacher.findById({_id: req.params.id}).populate("position")
-        .then(teacher => {
-            res.send(teacher);
-        });
-});
-
-router.post("/teachers", (req, res)=>{
-    Teacher.create(req.body)
-        .then(teacher => {
-            res.send(teacher);
-        });
-});
-
-router.put("/teachers/:id", (req, res)=>{
-    Teacher.findByIdAndUpdate({_id: req.params.id}, req.body)
-        .then(()=> {
-            Teacher.findOne({_id: req.params.id}).populate("position")
-                .then(teacher => {
-                    res.send(teacher);
-                });
-        });
-});
-
-router.delete("/teachers/:id", (req, res)=>{
-    Teacher.deleteOne({_id: req.params.id})
-        .then(teacher => {
-            res.send(teacher);
         });
 });
 

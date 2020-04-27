@@ -12,10 +12,34 @@
   <component name="ChangeListManager">
     <list default="true" id="d389004f-1aca-4e27-a367-7d63dbcc233a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Warehouse/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Warehouse/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Users.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Users.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chunk-016f9f4a.1753d1af.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chunk-4329d31a.20533c75.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.242e0a59.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.242e0a59.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-016f9f4a.377423c4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-016f9f4a.377423c4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-2d217357.e25af24a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-2d217357.e25af24a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-2d2308ce.2910d229.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-2d2308ce.2910d229.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-4329d31a.8154611e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-4329d31a.8154611e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-vendors.adaecd56.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunk-vendors.adaecd56.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -53,6 +77,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/views/subjects" />
+      <recent name="$PROJECT_DIR$/client/src/views" />
       <recent name="$PROJECT_DIR$/routes/api" />
     </key>
   </component>
@@ -69,7 +95,8 @@
       <workItem from="1587689329893" duration="4000" />
       <workItem from="1587788239740" duration="7937000" />
       <workItem from="1587831198855" duration="11804000" />
-      <workItem from="1587873339276" duration="5240000" />
+      <workItem from="1587873339276" duration="15818000" />
+      <workItem from="1587972106146" duration="3166000" />
     </task>
     <servers />
   </component>
@@ -93,9 +120,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1587831175631" />
-    <state x="385" y="196" key="search.everywhere.popup" timestamp="1587788243738">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1587958565089">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1587788243738" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1587958565089" />
   </component>
 </project>

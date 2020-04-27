@@ -49,6 +49,42 @@ Vue.use(VueRouter)
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/subjects',
+    name: 'Subjects',
+
+    component: () => import('../views/subjects/Subjects.vue'),
+    meta: {
+      requiresAdmin: true
+    }
+  },
+  {
+    path: '/subjects/new',
+    name: 'New Subject',
+
+    component: () => import('../views/subjects/Add.vue'),
+    meta: {
+      requiresAdmin: true
+    }
+  },
+  {
+    path: '/positions',
+    name: 'Positions',
+
+    component: () => import('../views/positions/Positions.vue'),
+    meta: {
+      requiresAdmin: true
+    }
+  },
+  {
+    path: '/positions/new',
+    name: 'New Position',
+
+    component: () => import('../views/positions/Add.vue'),
+    meta: {
+      requiresAdmin: true
+    }
   }
 ]
 
