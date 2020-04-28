@@ -85,6 +85,24 @@ Vue.use(VueRouter)
     meta: {
       requiresAdmin: true
     }
+  },
+  {
+    path: '/lists',
+    name: 'Lists',
+
+    component: () => import('../views/lists/Lists.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/lists/:id',
+    name: 'List',
+
+    component: () => import('../views/lists/List.vue'),
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 

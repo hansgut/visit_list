@@ -6,11 +6,11 @@ const VisitSchema = new Schema({
     date_fact: Date,
     visiting_teacher: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "teacher"
+        ref: "users"
     },
     visited_teacher: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "teacher"
+        ref: "users"
     },
     subject: {
         type: mongoose.Schema.Types.ObjectId,
@@ -19,6 +19,10 @@ const VisitSchema = new Schema({
     lesson_type: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "lessonType"
+    },
+    visits_list: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "visitsList"
     },
     purpose: String,
     result: Array               // TODO change to object after create a model.

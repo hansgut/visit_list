@@ -5,6 +5,8 @@ const LessonType = require('../../models/lesson-type');
 const Position = require('../../models/position');
 let User = require('../../models/User');
 const Visit = require('../../models/visit');
+const passport = require("passport");
+const VisitsList = require('../../models/VisitsList');
 
 // Subjects
 
@@ -53,8 +55,10 @@ router.delete("/subjects/:id", (req, res)=>{
 router.get("/lesson_types", (req, res)=>{
     LessonType.find({})
         .then(lessonTypes => {
-            res.send(lessonTypes);
-        })
+            return res.json({
+                lesson_types: lessonTypes
+            });
+        });
 });
 
 router.get("/lesson_types/:id", (req, res)=>{
@@ -132,35 +136,60 @@ router.delete("/positions/:id", (req, res)=>{
 
 // Visits TODO validates for foreign ids
 
+
+router.get('/visits_lists', passport.authenticate('jwt', {
+    session: false
+}), (req, res) => {
+    console.log(req);
+    if (req.user.admin){
+        VisitsList.find({ }).then(visitsLists => {
+            return res.json({
+               visits_lists: visitsLists
+            });
+        })
+    } else {
+        Visit.distinct("visits_list", { visiting_teacher: req.user._id }).then(visitsListIds => {
+            VisitsList.find({ _id: {$in: visitsListIds} }).then(visitsLists => {
+                return res.json({
+                    visits_lists: visitsLists
+                });
+            });
+        });
+    }
+});
+
+router.delete('/visits_lists/:id', (req, res)=>{
+    VisitsList.deleteOne({_id: req.params.id}).then(visitsList => {
+       return res.json({
+           visits_list: visitsList
+       })
+    });
+});
+
+router.post('/visits_lists', (req, res)=>{
+    VisitsList.create(req.body).then(visitsList => {
+        return res.json({
+            visits_list: visitsList
+        })
+    });
+});
+
+
 router.get("/visits", (req, res)=>{
-    Visit.find({})
+    Visit.find({ visits_list: req.body.visits_list })
         .populate({
-            path: "visiting_teacher",
-            populate: { path: "position" }
+            path: "visiting_teacher"//,
+            //populate: { path: "position" }
         })
         .populate({
-            path: "visited_teacher",
-            populate: { path: "position" }
+            path: "visited_teacher"//,
+            //populate: { path: "position" }
         })
         .populate("subject").populate("lesson_type")
         .then(visits => {
-            res.send(visits);
-        })
-});
-
-router.get("/visits/:id", (req, res)=>{
-    Visit.findById({_id: req.params.id})
-        .populate({
-            path: "visiting_teacher",
-            populate: { path: "position" }
-        })
-        .populate({
-            path: "visited_teacher",
-            populate: { path: "position" }
-        })
-        .populate("subject").populate("lesson_type")
-        .then(visit => {
-            res.send(visit);
+            return res.json({
+               visits: visits
+            });
         });
 });
 
@@ -168,25 +197,6 @@ router.post("/visits", (req, res)=>{
     Visit.create(req.body)
         .then(visit => {
             res.send(visit);
-        });
-});
-
-router.put("/visits/:id", (req, res)=>{
-    Visit.findByIdAndUpdate({_id: req.params.id}, req.body)
-        .then(()=> {
-            Visit.findOne({_id: req.params.id})
-                .populate({
-                path: "visiting_teacher",
-                populate: { path: "position" }
-                })
-                .populate({
-                    path: "visited_teacher",
-                    populate: { path: "position" }
-                })
-                .populate("subject").populate("lesson_type")
-                .then(visit => {
-                    res.send(visit);
-                });
         });
 });
 

@@ -14,6 +14,11 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link to="/lists" class="nav-link" v-if="isLoggedIn">
+                        Lists
+                    </router-link>
+                </li>
+                <li class="nav-item">
                     <router-link to="/users" class="nav-link" v-if="isAdmin">
                         Users
                     </router-link>

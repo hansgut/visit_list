@@ -11,7 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d389004f-1aca-4e27-a367-7d63dbcc233a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/views/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Users.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/visit.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/visit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +74,8 @@
       <workItem from="1587788239740" duration="7937000" />
       <workItem from="1587831198855" duration="11804000" />
       <workItem from="1587873339276" duration="15818000" />
-      <workItem from="1587972106146" duration="3351000" />
+      <workItem from="1587972106146" duration="3718000" />
+      <workItem from="1588040773062" duration="11943000" />
     </task>
     <servers />
   </component>
