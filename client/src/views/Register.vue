@@ -7,6 +7,12 @@
         <input id="surname" type="text" class="form-control" name="surname"
                v-model="surname" placeholder="Surname"
                required="" autofocus="" />
+        <select id="position" class="form-control" v-model="position" style="height: 45px">
+            <option disabled value="">Position</option>
+            <option v-for="position in positions" :key="position._id" :value="position._id">
+                {{ position.name }}
+            </option>
+        </select>
         <input id="email" type="text" class="form-control" name="email"
                v-model="email" placeholder="Email Address"
                required="" autofocus="" />
@@ -23,15 +29,24 @@
 
 <script>
     import { mapActions } from 'vuex';
+    import axios from "axios";
+    import {urlMixin} from "../mixins/urlMixin";
+
     export default {
+        mixins: [urlMixin],
         data(){
             return {
                 name: "",
                 surname: "",
                 email: "",
                 password: "",
-                confirm_password: ""
+                confirm_password: "",
+                position: "",
+                positions: []
             }
+        },
+        mounted() {
+            this.getPositions();
         },
         methods: {
             ...mapActions(['register']),
@@ -41,12 +56,19 @@
                     surname: this.surname,
                     email: this.email,
                     password: this.password,
-                    confirm_password: this.confirm_password
+                    confirm_password: this.confirm_password,
+                    position: this.position
                 }
                 this.register(user).then(res => {
                    if(res.data.success){
                        this.$router.push('/login');
                    }
+                });
+            },
+            getPositions()
+            {
+                axios.get(this.apiUrl() + '/api/positions').then(res => {
+                    this.positions = res.data.positions;
                 });
             }
         }
@@ -73,7 +95,7 @@
     .form-signin .checkbox {
         font-weight: normal;
     }
-    .form-signin .form-control {
+    .form-signin .form-control, select {
         position: relative;
         font-size: 16px;
         height: auto;
@@ -85,7 +107,7 @@
     .form-signin .form-control:focus {
         z-index: 2;
     }
-    .form-signin input[type="text"] {
+    .form-signin input[type="text"], select {
         margin-bottom: -1px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;

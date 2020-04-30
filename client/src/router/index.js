@@ -96,12 +96,41 @@ Vue.use(VueRouter)
     }
   },
   {
+    path: '/lists/new',
+    name: 'New List',
+
+    component: () => import('../views/lists/Add.vue'),
+    meta: {
+      requiresAdmin: true
+    }
+  },
+  {
     path: '/lists/:id',
     name: 'List',
 
     component: () => import('../views/lists/List.vue'),
     meta: {
       requiresAuth: true
+    }
+  },
+  {
+    path: '/lists/:id/:visit_id/edit',
+    name: 'Edit Visit',
+
+    component: () => import('../views/lists/EditVisit.vue'),
+    props: true,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/lists/:id/add',
+    name: 'Add Visit',
+
+    component: () => import('../views/lists/AddVisit.vue'),
+    props: true,
+    meta: {
+      requiresAdmin: true
     }
   }
 ]

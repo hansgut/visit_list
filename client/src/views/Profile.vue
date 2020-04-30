@@ -5,6 +5,7 @@
             <ul class="list-group">
                 <li class="list-group-item">Email: {{ user.email }}</li>
                 <li class="list-group-item">Full name: {{ user.name }} {{user.surname}}</li>
+                <li class="list-group-item">Position: {{ position() }}</li>
             </ul>
         </div>
     </div>
@@ -17,11 +18,19 @@
             ...mapGetters(['user'])
         },
         methods: {
-            ...mapActions(['getProfile'])
+            ...mapActions(['getProfile']),
+            position(){
+                if(this.user.position){
+                    return this.user.position.name;
+                } else {
+                    return '';
+                }
+            }
         },
-        created() {
+        mounted() {
             this.getProfile();
         }
+
     }
 </script>
 

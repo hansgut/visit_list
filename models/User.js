@@ -24,6 +24,10 @@ const UserSchema = new Schema({
     admin: {
         type: Boolean,
         default: false
+    },
+    position: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "position"
     }
 });
 

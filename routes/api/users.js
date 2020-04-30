@@ -12,7 +12,7 @@ const User = require("../../models/User");
  * @access Public
  */
 router.post('/register', (req, res) => {
-    let { name, surname, email, password, confirm_password } = req.body;
+    let { name, surname, email, password, confirm_password, position } = req.body;
 
     if (password !== confirm_password){
         return res.status(400).json({
@@ -32,7 +32,8 @@ router.post('/register', (req, res) => {
         name,
         surname,
         email,
-        password
+        password,
+        position
     });
 
     bcrypt.genSalt(10, (err, salt) => {
@@ -99,13 +100,16 @@ router.post('/login', (req, res) => {
 router.get('/profile', passport.authenticate('jwt', {
     session: false
 }), (req, res) => {
-    return res.json({
-        user: req.user
-    });
+    User.findById(req.user._id).populate('position')
+        .then(user => {
+            res.json({
+                user: user
+            });
+        });
 });
 
 router.get('/', (req, res) => {
-    User.find({ admin: { $not: { $eq: true } } }) // cannot show admins if need to change please tell
+    User.find({ admin: { $not: { $eq: true } } }).populate('position') // cannot show admins if need to change please tell
         .then(users => {
             return res.json({
                 users: users

@@ -28,11 +28,6 @@
                         Subjects
                     </router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link to="/positions" class="nav-link" v-if="isAdmin">
-                        Positions
-                    </router-link>
-                </li>
                 <li class="nav-item" v-if="!isLoggedIn">
                     <router-link to="/login" class="nav-link">
                         Login

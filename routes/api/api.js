@@ -140,7 +140,6 @@ router.delete("/positions/:id", (req, res)=>{
 router.get('/visits_lists', passport.authenticate('jwt', {
     session: false
 }), (req, res) => {
-    console.log(req);
     if (req.user.admin){
         VisitsList.find({ }).then(visitsLists => {
             return res.json({
@@ -176,14 +175,14 @@ router.post('/visits_lists', (req, res)=>{
 
 
 router.get("/visits", (req, res)=>{
-    Visit.find({ visits_list: req.body.visits_list })
+    Visit.find({ visits_list: req.query.visits_list })
         .populate({
-            path: "visiting_teacher"//,
-            //populate: { path: "position" }
+            path: "visiting_teacher",
+            populate: { path: "position" }
         })
         .populate({
-            path: "visited_teacher"//,
-            //populate: { path: "position" }
+            path: "visited_teacher",
+            populate: { path: "position" }
         })
         .populate("subject").populate("lesson_type")
         .then(visits => {
@@ -191,6 +190,27 @@ router.get("/visits", (req, res)=>{
                visits: visits
             });
         });
+});
+
+router.put("/visits/:id", (req, res)=>{
+    Visit.findByIdAndUpdate({_id: req.params.id}, req.body)
+        .then(()=> {
+            Visit.findOne({_id: req.params.id})
+                .then(visit => {
+                    res.json({
+                        visit: visit
+                    });
+                });
+        });
+});
+
+router.get("/visits/:id", (req, res)=>{
+   Visit.findById({ _id: req.params.id })
+       .then(visit => {
+           return res.json({
+               visit: visit
+           });
+       }) ;
 });
 
 router.post("/visits", (req, res)=>{

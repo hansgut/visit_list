@@ -49,10 +49,12 @@
             //     });
             // },
             deleteSubject(id) {
-                axios.delete(this.apiUrl() + '/api/subjects/' + id).then(res => {
-                    console.log("Subject was deleted.", res);
-                    this.getSubjects();
-                });
+                if(confirm('Are you sure?')){
+                    axios.delete(this.apiUrl() + '/api/subjects/' + id).then(res => {
+                        console.log("Subject was deleted.", res);
+                        this.getSubjects();
+                    });
+                }
             }
         }
     }

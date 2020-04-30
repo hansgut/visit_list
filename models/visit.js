@@ -25,7 +25,7 @@ const VisitSchema = new Schema({
         ref: "visitsList"
     },
     purpose: String,
-    result: Array               // TODO change to object after create a model.
+    result: String
 });
 
 const Visit = mongoose.model("visit", VisitSchema);
