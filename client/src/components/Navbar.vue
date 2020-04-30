@@ -24,6 +24,11 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link to="/statistics" class="nav-link" v-if="isAdmin">
+                        Statistics
+                    </router-link>
+                </li>
+                <li class="nav-item">
                     <router-link to="/subjects" class="nav-link" v-if="isAdmin">
                         Subjects
                     </router-link>

@@ -132,6 +132,16 @@ Vue.use(VueRouter)
     meta: {
       requiresAdmin: true
     }
+  },
+  {
+    path: '/statistics',
+    name: 'Statistics',
+
+    component: () => import('../views/Statistics.vue'),
+    props: true,
+    meta: {
+      requiresAdmin: true
+    }
   }
 ]
 

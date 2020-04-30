@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group col">
                     <label for="purpose">Purpose</label>
-                    <input id="purpose" type="text" class="form-control" placeholder="Purpose" v-model="purpose">
+                    <input id="purpose" type="text" class="form-control" placeholder="Purpose" v-model="purpose" :disabled="!isAdmin">
                 </div>
             </div>
             <div class="form-row">

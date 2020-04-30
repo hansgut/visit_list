@@ -227,4 +227,27 @@ router.delete("/visits/:id", (req, res)=>{
         });
 });
 
+router.get("/statistics", async (req, res)=>{
+    let labels = [];
+    let visited = [];
+    let notVisited = [];
+
+    const users = await User.find({ admin: { $not: { $eq: true } } });
+
+    for(let i in users){
+        labels.push(`${users[i].name} ${users[i].surname}`);
+        const notVisitedCount = await Visit.count({ visiting_teacher: users[i]._id, date_fact: null });
+        notVisited.push(notVisitedCount);
+        const visitedCount = await Visit.count({ visiting_teacher: users[i]._id, date_fact: { $ne: null } });
+        visited.push(visitedCount);
+    }
+    return res.json({
+        statistics: {
+            labels: labels,
+            visited: visited,
+            not_visited: notVisited
+        }
+    });
+});
+
 module.exports = router;

@@ -12,18 +12,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d389004f-1aca-4e27-a367-7d63dbcc233a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/VisitForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/VisitForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/lists/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/lists/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/lists/Lists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/lists/Lists.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/subjects/Subjects.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/subjects/Subjects.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/visit.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/visit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -82,7 +76,9 @@
       <workItem from="1587873339276" duration="15818000" />
       <workItem from="1587972106146" duration="3718000" />
       <workItem from="1588040773062" duration="11943000" />
-      <workItem from="1588099616712" duration="33305000" />
+      <workItem from="1588099616712" duration="34020000" />
+      <workItem from="1588230041480" duration="4681000" />
+      <workItem from="1588263281540" duration="7753000" />
     </task>
     <servers />
   </component>
