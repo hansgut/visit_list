@@ -16,14 +16,14 @@ router.post('/register', (req, res) => {
 
     if (password !== confirm_password){
         return res.status(400).json({
-           msg: "Password do not match."
+           msg: "Пароли не совпадают."
         });
     }
 
     User.findOne({ email: email }).then(user => {
        if(user){
            return res.status(400).json({
-               msg: "Email is already registered."
+               msg: "Email уже зарегестрирован."
            })
        }
     });
@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
           newUser.save().then(user => {
              return res.status(201).json({
                 success: true,
-                 msg: "User is now registered."
+                 msg: "Преподаватель уже зарегестрирован."
              });
           });
        });
@@ -59,7 +59,7 @@ router.post('/login', (req, res) => {
    User.findOne({ email: req.body.email }).then(user => {
        if(!user){
            return res.status(404).json({
-               msg: "Email is not found.",
+               msg: "Email не найден.",
                success: false
            });
        }
@@ -79,12 +79,12 @@ router.post('/login', (req, res) => {
                     success: true,
                     user: user,
                     token: `Bearer ${token}`,
-                    msg: "You are logged in."
+                    msg: "Вы вошли."
                 });
              });
          } else {
              return res.status(404).json({
-                msg: "Incorrect password.",
+                msg: "Неправильный пароль.",
                 success: false
              });
          }

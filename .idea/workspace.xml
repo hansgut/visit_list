@@ -15,9 +15,19 @@
       <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/VisitForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/VisitForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Statistics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Statistics.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Users.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/lists/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/lists/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/lists/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/lists/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/lists/Lists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/lists/Lists.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/positions/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/positions/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/positions/Positions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/positions/Positions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/subjects/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/subjects/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/subjects/Subjects.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/subjects/Subjects.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +88,7 @@
       <workItem from="1588040773062" duration="11943000" />
       <workItem from="1588099616712" duration="34020000" />
       <workItem from="1588230041480" duration="4681000" />
-      <workItem from="1588263281540" duration="7753000" />
+      <workItem from="1588263281540" duration="12127000" />
     </task>
     <servers />
   </component>
