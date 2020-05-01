@@ -23,7 +23,7 @@
                v-model="confirm_password" placeholder="Подтвердите пароль"
                required=""/>
         <input type="submit" class="btn btn-lg btn-primary btn-block btn-success" value="Зарегестрироваться"/>
-        <router-link to="/login" class="btn btn-lg btn-primary btn-block">Логин</router-link>
+        <router-link to="/login" class="btn btn-lg btn-primary btn-block">Войти</router-link>
     </form>
 </template>
 

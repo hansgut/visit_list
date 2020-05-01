@@ -4,7 +4,7 @@
         <h2 class="form-signin-heading">Логин</h2>
         <input id="email" type="text" class="form-control" name="email" v-model="email" placeholder="Email" required="" autofocus="" />
         <input id="password" type="password" class="form-control" name="password" v-model="password" placeholder="Пароль" required=""/>
-        <input type="submit" class="btn btn-lg btn-primary btn-block btn-success" value="Логин"/>
+        <input type="submit" class="btn btn-lg btn-primary btn-block btn-success" value="Войти"/>
         <router-link to="/register" class="btn btn-lg btn-primary btn-block">Регистрация</router-link>
     </form>
     </div>

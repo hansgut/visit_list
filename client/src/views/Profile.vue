@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Profile</h1>
+        <h1>Профиль</h1>
         <div class="card">
             <ul class="list-group">
                 <li class="list-group-item">Email: {{ user.email }}</li>
