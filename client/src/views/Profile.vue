@@ -4,8 +4,8 @@
         <div class="card">
             <ul class="list-group">
                 <li class="list-group-item">Email: {{ user.email }}</li>
-                <li class="list-group-item">Full name: {{ user.name }} {{user.surname}}</li>
-                <li class="list-group-item">Position: {{ position() }}</li>
+                <li class="list-group-item">Имя: {{ user.name }} {{user.surname}}</li>
+                <li class="list-group-item">Должность: {{ position() }}</li>
             </ul>
         </div>
     </div>

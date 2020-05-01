@@ -51,12 +51,12 @@
                         labels: this.statistics.labels,
                         datasets: [
                             {
-                                label: 'Visited',
+                                label: 'Посещенные',
                                 backgroundColor: '#3CB371',
                                 data: this.statistics.visited
                             },
                             {
-                                label: 'Not visited',
+                                label: 'Непосещенные',
                                 backgroundColor: '#DC143C',
                                 data: this.statistics.not_visited
                             }
@@ -66,15 +66,15 @@
                     const allVisited = this.statistics.visited.reduce((a, b) => a + b, 0);
                     const allNotVisited = this.statistics.not_visited.reduce((a, b) => a + b, 0);
                     this.allDataCollection = {
-                        labels: ['All teachers'],
+                        labels: ['Все преподаватели'],
                         datasets: [
                             {
-                                label: 'Visited',
+                                label: 'Посещенные',
                                 backgroundColor: '#3CB371',
                                 data: [allVisited]
                             },
                             {
-                                label: 'Not visited',
+                                label: 'Непосещенные',
                                 backgroundColor: '#DC143C',
                                 data: [allNotVisited]
                             }

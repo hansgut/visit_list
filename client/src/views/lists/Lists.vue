@@ -7,8 +7,8 @@
                         <h5 class="card-title">{{ list.name }}</h5>
                         <div class="row">
                             <div class="col">
-                                <router-link :to="{path: '/lists/' + list._id}" class="btn btn-primary">Open</router-link>
-                                <a class="btn btn-danger" @click.prevent="deleteLists(list._id)" v-if="isAdmin">Delete</a>
+                                <router-link :to="{path: '/lists/' + list._id}" class="btn btn-primary">Открыть</router-link>
+                                <a class="btn btn-danger" @click.prevent="deleteLists(list._id)" v-if="isAdmin">Удалить</a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                 });
             },
             deleteLists(id) {
-                if(confirm('Are you sure?')){
+                if(confirm('Вы уверены?')){
                     axios.delete(this.apiUrl() + '/api/visits_lists/' + id).then(res => {
                         console.log("List was deleted.", res);
                         this.getLists();

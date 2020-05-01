@@ -3,14 +3,14 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Planned date</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Visiting teacher</th>
-                    <th scope="col">Visited teacher</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Lesson type</th>
-                    <th scope="col">Result</th>
-                    <th scope="col">Purpose</th>
+                    <th scope="col">Плановая дата</th>
+                    <th scope="col">Фактическая дата</th>
+                    <th scope="col">Посещающий</th>
+                    <th scope="col">Посещаймый</th>
+                    <th scope="col">Дисциплина</th>
+                    <th scope="col">Тип занятия</th>
+                    <th scope="col">Результаты посещения</th>
+                    <th scope="col">Цель посещения</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -24,12 +24,12 @@
                     <td>{{ getPropName(row.lesson_type) }}</td>
                     <td>{{ row.result }}</td>
                     <td>{{ row.purpose }}</td>
-                    <td v-if="isAdmin"><a class="btn btn-danger" @click.prevent="deleteRow(row._id)">Delete</a></td>
+                    <td v-if="isAdmin"><a class="btn btn-danger" @click.prevent="deleteRow(row._id)">Удалить</a></td>
                     <td>
                         <router-link
                                 :to="{path: '/lists/' + $route.params.id + '/' + row._id + '/edit'}"
                                 class="btn btn-primary">
-                        Edit
+                        Изменить
                         </router-link>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
                 v-if="isAdmin"
                 :to="{path: '/lists/' + $route.params.id + '/add'}"
                 class="btn btn-success">
-            Add
+            Добавить
         </router-link>
     </div>
 </template>
@@ -93,7 +93,7 @@
                 }
             },
             deleteRow(id){
-                if(confirm('Are you sure?')){
+                if(confirm('Вы уверены?')){
                     axios.delete(this.apiUrl() + '/api/visits/' + id).then(res => {
                         console.log("Visit was deleted.", res);
                         this.getList();

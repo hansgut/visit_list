@@ -1,29 +1,29 @@
 <template>
     <form class="form-signin" @submit.prevent="registerUser">
-        <h2 class="form-signin-heading">Register</h2>
+        <h2 class="form-signin-heading">Регистрация</h2>
         <input id="name" type="text" class="form-control" name="name"
-               v-model="name" placeholder="Name"
+               v-model="name" placeholder="Имя"
                required="" autofocus="" />
         <input id="surname" type="text" class="form-control" name="surname"
-               v-model="surname" placeholder="Surname"
+               v-model="surname" placeholder="Фамилия"
                required="" autofocus="" />
         <select id="position" class="form-control" v-model="position" style="height: 45px">
-            <option disabled value="">Position</option>
+            <option disabled value="">Должность</option>
             <option v-for="position in positions" :key="position._id" :value="position._id">
                 {{ position.name }}
             </option>
         </select>
         <input id="email" type="text" class="form-control" name="email"
-               v-model="email" placeholder="Email Address"
+               v-model="email" placeholder="Email"
                required="" autofocus="" />
         <input id="password" type="password" class="form-control" name="password"
-               v-model="password" placeholder="Password"
+               v-model="password" placeholder="Пароль"
                required=""/>
         <input id="confirm_password" type="password" class="form-control" name="confirm_password"
-               v-model="confirm_password" placeholder="Confirm password"
+               v-model="confirm_password" placeholder="Подтвердите пароль"
                required=""/>
-        <input type="submit" class="btn btn-lg btn-primary btn-block btn-success" value="Register"/>
-        <router-link to="/login" class="btn btn-lg btn-primary btn-block">Login</router-link>
+        <input type="submit" class="btn btn-lg btn-primary btn-block btn-success" value="Зарегестрироваться"/>
+        <router-link to="/login" class="btn btn-lg btn-primary btn-block">Логин</router-link>
     </form>
 </template>
 

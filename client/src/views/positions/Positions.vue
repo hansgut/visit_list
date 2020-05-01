@@ -6,18 +6,17 @@
                 <span class="badge">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Options
+              Опции
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<!--                <a class="dropdown-item" href="#" @click.prevent="editSubject(user._id)">Delete</a>-->
-                <a class="dropdown-item" href="#" @click.prevent="deletePosition(position._id)">Delete</a>
+                <a class="dropdown-item" href="#" @click.prevent="deletePosition(position._id)">Удалить</a>
             </div>
           </div>
         </span>
             </li>
         </ul>
         <router-link to="/positions/new" class="add btn btn-success">
-            Add
+            Добавить
         </router-link>
     </div>
 </template>

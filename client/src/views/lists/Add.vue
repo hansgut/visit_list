@@ -2,11 +2,11 @@
     <div>
         <form>
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Название</label>
                 <input type="text" class="form-control" id="name" v-model="name">
             </div>
-            <a class="btn btn-primary" @click.prevent="addList">Submit</a>
-            <router-link to="/lists" class="btn btn-danger">Cancel</router-link>
+            <a class="btn btn-primary" @click.prevent="addList">Сохранить</a>
+            <router-link to="/lists" class="btn btn-danger">Отмена</router-link>
         </form>
     </div>
 </template>

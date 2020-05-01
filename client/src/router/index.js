@@ -168,7 +168,7 @@ router.beforeEach((to, from, next) => {
     if (store.getters.isAdmin){
       next()
     } else {
-      next('/')
+      next('/profile')
     }
   }
 });

@@ -3,7 +3,7 @@
         <form>
             <div class="form-row">
                 <div class="form-group col">
-                    <label for="plannedDate">Planned date</label>
+                    <label for="plannedDate">Плановая дата</label>
                     <date-picker
                             id="plannedDate"
                             v-model="datePlan"
@@ -15,7 +15,7 @@
                     ></date-picker>
                 </div>
                 <div class="form-group col">
-                    <label for="date">Date</label>
+                    <label for="date">Фактическая дата</label>
                     <date-picker
                             id="date"
                             v-model="date"
@@ -29,18 +29,18 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <label for="visitingTeacher">Visiting Teacher</label>
+                    <label for="visitingTeacher">Посещающий</label>
                     <select id="visitingTeacher" class="form-control" v-model="visitingTeacher" :disabled="!isAdmin">
-                        <option disabled value="">Please select one</option>
+                        <option disabled value="">Выберите пункт</option>
                         <option v-for="user in users" :key="user._id" :value="user._id">
                             {{ getTeacherName(user) }}
                         </option>
                     </select>
                 </div>
                 <div class="form-group col">
-                    <label for="visitedTeacher">Visited Teacher</label>
+                    <label for="visitedTeacher">Посещаймый</label>
                     <select id="visitedTeacher" class="form-control" v-model="visitedTeacher" :disabled="!isAdmin">
-                        <option disabled value="">Please select one</option>
+                        <option disabled value="">Выберите пункт</option>
                         <option v-for="user in users" :key="user._id" :value="user._id">
                             {{ getTeacherName(user) }}
                         </option>
@@ -49,18 +49,18 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <label for="subject">Subject</label>
+                    <label for="subject">Дисциплина</label>
                     <select id="subject" class="form-control" v-model="subject" :disabled="!isAdmin">
-                        <option disabled value="">Please select one</option>
+                        <option disabled value="">Выберите пункт</option>
                         <option v-for="subject in subjects" :key="subject._id" :value="subject._id">
                             {{ getPropName(subject) }}
                         </option>
                     </select>
                 </div>
                 <div class="form-group col">
-                    <label for="lessonType">Lesson type</label>
+                    <label for="lessonType">Тип занятия</label>
                     <select id="lessonType" class="form-control" v-model="lessonType" :disabled="!isAdmin">
-                        <option disabled value="">Please select one</option>
+                        <option disabled value="">Выберите пункт</option>
                         <option v-for="lessonType in lessonTypes" :key="lessonType._id" :value="lessonType._id">
                             {{ getPropName(lessonType) }}
                         </option>
@@ -69,23 +69,23 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <label for="result">Result</label>
+                    <label for="result">Результаты посещения: выводы, замечания, предложения</label>
                     <div class="input-group mb-3">
                         <input id="result" type="text" class="form-control" aria-describedby="button-addon2" v-model="result" :disabled="true">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-toggle="modal" data-target="#exampleModal">Enter</button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-toggle="modal" data-target="#exampleModal">Заполнить</button>
                         </div>
                     </div>
                 </div>
                 <div class="form-group col">
-                    <label for="purpose">Purpose</label>
-                    <input id="purpose" type="text" class="form-control" placeholder="Purpose" v-model="purpose" :disabled="!isAdmin">
+                    <label for="purpose">Цель посещения</label>
+                    <input id="purpose" type="text" class="form-control" placeholder="Цель посещения" v-model="purpose" :disabled="!isAdmin">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <a class="btn btn-success" @click.prevent="submitForm">Submit</a>
-                    <a @click="$router.go(-1)" class="btn btn-danger">Cancel</a>
+                    <a class="btn btn-success" @click.prevent="submitForm">Подтвердить</a>
+                    <a @click="$router.go(-1)" class="btn btn-danger">Отмена</a>
                 </div>
             </div>
         </form>
@@ -581,8 +581,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" @click.prevent="convertResultFromFormToStr" data-dismiss="modal">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                                <button type="submit" class="btn btn-primary" @click.prevent="convertResultFromFormToStr" data-dismiss="modal">Сохранить</button>
                             </div>
                         </form>
                     </div>
