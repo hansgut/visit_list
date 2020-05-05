@@ -16,7 +16,7 @@
             </div>
         </div>
         <router-link to="/lists/new" class="add btn btn-success" v-if="isAdmin">
-            Add
+            Добавить
         </router-link>
     </div>
 </template>
