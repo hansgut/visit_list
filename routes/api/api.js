@@ -147,7 +147,7 @@ router.get('/visits_lists', passport.authenticate('jwt', {
             });
         })
     } else {
-        Visit.distinct("visits_list", { visiting_teacher: req.user._id }).then(visitsListIds => {
+        Visit.distinct("visits_list", { $or: [{ visiting_teacher: req.user._id }, { visited_teacher: req.user._id }]}).then(visitsListIds => {
             VisitsList.find({ _id: {$in: visitsListIds} }).then(visitsLists => {
                 return res.json({
                     visits_lists: visitsLists

@@ -25,7 +25,7 @@
                     <td>{{ row.result }}</td>
                     <td>{{ row.purpose }}</td>
                     <td v-if="isAdmin"><a class="btn btn-danger" @click.prevent="deleteRow(row._id)">Удалить</a></td>
-                    <td>
+                    <td v-if="canEdit(row)">
                         <router-link
                                 :to="{path: '/lists/' + $route.params.id + '/' + row._id + '/edit'}"
                                 class="btn btn-primary">
@@ -53,7 +53,7 @@
     export default {
         mixins: [urlMixin],
         computed: {
-            ...mapGetters(["isAdmin"])
+            ...mapGetters(["isAdmin", "user"])
         },
         data(){
             return{
@@ -102,6 +102,9 @@
             },
             editRow(row){
                 console.log(row);
+            },
+            canEdit(row){
+                return (row.visiting_teacher._id === this.user._id) || this.isAdmin;
             }
         }
     }
