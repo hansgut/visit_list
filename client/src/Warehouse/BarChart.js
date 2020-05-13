@@ -7,5 +7,7 @@ export default {
     props: ['options'],
     mounted () {
         this.renderChart(this.chartData, this.options);
+        // console.log(this.$data._chart);
+
     }
 }

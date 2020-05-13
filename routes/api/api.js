@@ -241,12 +241,33 @@ router.get("/statistics", async (req, res)=>{
         const visitedCount = await Visit.count({ visiting_teacher: users[i]._id, date_fact: { $ne: null } });
         visited.push(visitedCount);
     }
+
     return res.json({
         statistics: {
             labels: labels,
             visited: visited,
             not_visited: notVisited
         }
+    });
+});
+
+router.get("/statistics/users", async (req, res)=>{
+    let response = [];
+    const users = await User.find({ admin: { $not: { $eq: true } } });
+
+    for(let i in users){
+        const notVisited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: null }).populate('visited_teacher');
+        const visited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: { $ne: null } }).populate('visited_teacher');
+
+        response.push({
+           user: users[i],
+           not_visited: notVisited,
+           visited: visited
+        });
+    }
+
+    return res.json({
+       users: response
     });
 });
 
