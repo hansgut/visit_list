@@ -159,9 +159,12 @@ router.get('/visits_lists', passport.authenticate('jwt', {
 
 router.delete('/visits_lists/:id', (req, res)=>{
     VisitsList.deleteOne({_id: req.params.id}).then(visitsList => {
-       return res.json({
-           visits_list: visitsList
-       })
+        Visit.deleteMany({visits_list: req.params.id}).then(visits =>{
+            return res.json({
+                visits_list: visitsList,
+                visits: visits
+            });
+        });
     });
 });
 

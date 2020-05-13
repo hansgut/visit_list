@@ -48,7 +48,7 @@
                                                 <tr v-for="(row, rowIndex) in statistic.not_visited" :key="row._id">
                                                     <th scope="row">{{ rowIndex + 1 }}</th>
                                                     <td>{{ dateFilter(row.date_plan) }}</td>
-                                                    <td>{{ row.visited_teacher.name }} {{ row.visited_teacher.surname }}</td>
+                                                    <td>{{ getTeacherName(row.visited_teacher) }}</td>
                                                     <td>
                                                         <router-link :to="{path: '/lists/' + row.visits_list}" class="btn btn-primary">Перейти</router-link>
                                                     </td>
@@ -81,7 +81,7 @@
                                                 <tr v-for="(row, rowIndex) in statistic.visited" :key="row._id">
                                                     <th scope="row">{{ rowIndex + 1 }}</th>
                                                     <td>{{ dateFilter(row.date_fact) }}</td>
-                                                    <td>{{ row.visited_teacher.name }} {{ row.visited_teacher.surname }}</td>
+                                                    <td>{{ getTeacherName(row.visited_teacher) }}</td>
                                                     <td>
                                                         <router-link :to="{path: '/lists/' + row.visits_list}" class="btn btn-primary">Перейти</router-link>
                                                     </td>
@@ -193,6 +193,15 @@
                     return moment(String(date)).format('DD.MM.YYYY');
                 } else {
                     return '';
+                }
+            },
+            getTeacherName(teacher){ //TODO MIXIN
+                if (teacher){
+                    let position = "";
+                    if(teacher.position) position = ` (${teacher.position.name})`
+                    return teacher.name + " " + teacher.surname + position;
+                } else {
+                    return ""
                 }
             }
         }
