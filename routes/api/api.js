@@ -259,9 +259,16 @@ router.get("/statistics/users", async (req, res)=>{
     const users = await User.find({ admin: { $not: { $eq: true } } });
 
     for(let i in users){
-        const notVisited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: null }).populate('visited_teacher');
-        const visited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: { $ne: null } }).populate('visited_teacher');
-
+        const notVisited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: null })
+            .populate({
+                path: "visited_teacher",
+                populate: { path: "position" }
+            });
+        const visited = await Visit.find({ visiting_teacher: users[i]._id, date_fact: { $ne: null } })
+            .populate({
+                path: "visited_teacher",
+                populate: { path: "position" }
+            });
         response.push({
            user: users[i],
            not_visited: notVisited,
